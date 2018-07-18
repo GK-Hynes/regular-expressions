@@ -79,8 +79,23 @@ re = /Hel{2,}o/i; // Must occur at least {m} times
 // Parentheses () - Grouping
 re = /([0-9]x){3}/; // Must be digitx three times
 
+// Shorthand Character Classes
+re = /\w/; // Word character - alphanumeric character or _
+re = /\w+/; // One or more alphanumeric characters or _
+re = /\W/; // Non-word characters
+re = /\d/; // Match any digit
+re = /\d+/; //  Match any digit 0 or more times
+re = /\D/; // Match any non-digit
+re = /\s/; // Match whitespace character
+re = /\S/; // Match non-whitespace characters
+re = /Hell\b/i; // Word boundary
+
+// Assertions
+re = /x(?=y)/; // Match x only if followed by y
+re = /x(?!y)/; // Match x only if NOT followed by y
+
 // String to match
-const str = "3x3x3x";
+const str = "x";
 
 // Log results
 const result = re.exec(str);
